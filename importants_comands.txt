@@ -1,0 +1,71 @@
+ 
+- npm install
+
+-> instala todas as dependências que estão descritas no package.json
+
+
+
+Nodemon
+
+-> é umar ferramenta que que visa facilitar o desenvolvimento do backend, reiniciando o servidor sempre que algo for alterado
+-> no código
+
+comandos:
+- npm install nodemon -D 
+-> o -D informa ao package.json que o pacote é para desenvolvimento e não para produção
+
+-> podemos ainda criar o campo 'start' dentro do 'script' no package.json com o comando que ira rodar o nodemon, ao invés de rodá-lo
+-> sempre a mão. Feito isto podemons iniciar a aplicação utilizando 'npm start' na linha de comando. 
+
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+- - - - - - - - -  Bancos de dados - - - - - - - - - - - - - - -
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+ -> knex é uma ferramenta de construção de buscas em banco de dados, servindo para diversos bancos SQL
+
+ comandos:
+ - npm install knex
+ - npm install sqlite3
+ - npx knex init - 'npx executa um pacote', 'executa o pacote knex' 
+ - npx knex , 'exibe todos os comandos do knex'
+
+ -> o comando acima cria um arquivo chamado knewfile.js onde tem algumas configurações do banco e do cliente do banco que será
+ -> utilizado em alguns ambientes : desenvolvimento, teste (chamado staging) e produção
+
+ - npx knex migrate:make create_ongs
+
+ -> o comando acima é responsável pela criação do arquivo de migration que criará a tabela de ongs dentro do banco de dados
+ -> após o comando acontecerá um warning, que pode ser solucionado usando a propriedade useNullAsDefault:true no knexfile.js
+
+ -> na pasta setada para migrations paracerá um arquivo js com dois métodos, up and down
+ -> o método up define aquilo que tem que rodar quando a migration for executada, neste caso defina as colunas do banco de dados
+ -> usando knex, o método down define o que deve ser feito se a execução do up falhar, neste caso apagar a tabela ongs
+
+ - npx knex migrate:latest
+
+ -> executa a migration que fora definida neste anteriormente
+
+ - npx knex migrate:make create_incidents
+
+ ->vamos agora criar a tabela onde serão armazenados os casos da aplicação, implementado os mesmos metodos up and down
+ ->note que aqui precisamos de uma chave estrangeira para identificar a ong que salvou o caso no banco, sendo esta ong_id
+
+- npx knex migrate:latest
+
+-> para criar o banco com a ultima alteração feita no migrate
+
+- npx knex migrate:rollback
+
+-> o comando acima vai desfazer a última migration executada pelo comando latest
+
+- npx knex migrate:status
+
+-> o comando acima fazer mostrar as migrates que foram executadas
+
+- Buscar mais sobre os http status code
+- Buscar mais sobre métodos mvc, que de sugerem linhas gerais para organização dos métodos e chamadas de callbacks de funções
+
+- npm install cors 
+
+
