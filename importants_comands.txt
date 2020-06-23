@@ -1,4 +1,13 @@
- 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+- - - - - - - - -  iniciar aplicação - - - - - - - - - - - - - - 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+- npm start , dentro da pasta front end inicia a aplicação front end, dentro da pasta backend inicia o backend
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+- - - - - - - - -  Instalação e Recursos - - - - - - - - - - - - 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
 - npm install
 
 -> instala todas as dependências que estão descritas no package.json
@@ -14,6 +23,7 @@ comandos:
 - npm install nodemon -D 
 -> o -D informa ao package.json que o pacote é para desenvolvimento e não para produção
 
+- npm start
 -> podemos ainda criar o campo 'start' dentro do 'script' no package.json com o comando que ira rodar o nodemon, ao invés de rodá-lo
 -> sempre a mão. Feito isto podemons iniciar a aplicação utilizando 'npm start' na linha de comando. 
 
@@ -62,6 +72,9 @@ comandos:
 - npx knex migrate:status
 
 -> o comando acima fazer mostrar as migrates que foram executadas
+
+- Para criar a conexão com o banco, foi criado o arquivo connection.js onde foram importados tanto o knex quanto o suas
+- configurações
 
 - Buscar mais sobre os http status code
 - Buscar mais sobre métodos mvc, que de sugerem linhas gerais para organização dos métodos e chamadas de callbacks de funções
